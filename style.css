@@ -1,0 +1,61 @@
+body{
+    text-align: center;
+    font-family: Raleway;
+}
+
+header{
+    align-items: center;
+}
+
+header h1{
+    background-color: #4c95b5;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+
+.mother-img{
+    margin-bottom: 20px;
+}
+
+.game{
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.player-tite{
+    display: inline;
+}
+
+.player-container {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 20px 60px 60px 60px;
+    margin: 40px;
+}
+
+.ask-input{
+    width: 50px;
+    font-size: 18px;
+
+}
+
+.ask-button{
+    font-size: 18px;
+    padding: 10px 30px 10px 30px;
+    background-color: #d5e8e1;
+    border: 1px solid #a5c4b9;
+    border-radius: 10px;
+}
+
+.ask-button:hover{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+}
