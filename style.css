@@ -5,13 +5,13 @@ body{
 
 header{
     align-items: center;
+    opacity: .9;
 }
 
 header h1{
     background-color: #4c95b5;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 30px;
+    margin-bottom: 15px;
+    padding: 20px;
 }
 
 .mother-img{
@@ -22,7 +22,7 @@ header h1{
     display: flex;
     justify-content: space-between;
     justify-content: center;
-    border: 1px solid black;
+
 }
 
 .player-tite{
@@ -32,7 +32,7 @@ header h1{
 .player-container {
     display: inline-block;
     border: 1px solid black;
-    padding: 20px 60px 60px 60px;
+    padding: 20px 60px 30px 60px;
     margin: 40px;
 }
 
@@ -58,4 +58,41 @@ header h1{
 .score-container {
     display: flex;
     justify-content: center;
+}
+
+.rounds{
+    display: block;
+    justify-content: center;
+    padding: 20px;
+}
+
+#next-round-button{
+    font-size: 18px;
+    padding: 10px 50px 5px 50px;
+    background-color: #76abc2;
+    border: 1px solid #786c97;
+    border-radius: 10px;
+}
+
+#next-round-button:hover{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.directions-container{
+    display: block;
+    text-align: left;
+
+}
+
+.directions-container ol{
+    display: inline-flex;
+    font-size: 18px;
+}
+
+li{
+    margin-right: 20px;
+    margin-left: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
 }

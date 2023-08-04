@@ -30,31 +30,45 @@
             </div>
             
             <button id="p1-ask-button" class="ask-button">Ask</button>
-            <h3>Round <span id="p1-round-number">1</span></h3>
-            <button id="p1-next-round-button">Next Round</button>
+
         </div>
     </section>
 
 <!-- Player 2 -->
-<section class="player-title">
-    <h2>Player 2</h2>
-    <div class="player-container">
-        <p id="p2-m-answer"></p>
-        <div class="ask-container">
-            <h3>Mother, may I go <input type="number" id="p2-ask" min="0" max="5" class="ask-input"> steps forward </h3>
-            <h3 id="p2-ask-value"></h3>
+    <section class="player-title">
+        <h2>Player 2</h2>
+        <div class="player-container">
+            <p id="p2-m-answer"></p>
+            <div class="ask-container">
+                <h3>Mother, may I go <input type="number" id="p2-ask" min="0" max="5" class="ask-input"> steps forward </h3>
+                <h3 id="p2-ask-value"></h3>
+            </div>
+            <div class="score-container">
+                <H3>Score: &nbsp;</H3>
+                <h3 id="p2-score">0</h3>
+            </div>
+            <div>
+                <button id="p2-ask-button" class="ask-button">Ask</button>
+            </div>
         </div>
-        <div class="score-container">
-            <H3>Score: &nbsp;</H3>
-            <h3 id="p2-score">0</h3>
-        </div>
-            <button id="p2-ask-button" class="ask-button">Ask</button>
-            <h4>Round <span id="p2-round-number">1</span></h4>
-            <button id="p2-next-round-button">Next Round</button>
-        </div>
-    </div>
-</section>
+    </section>
 </div>
+<!-- next Round -->
+
+<section class="rounds">
+    <h3>Round <span id="round-number">1</span></h3>
+    <button id="next-round-button">Next Round</button>
+</section>
+
+<!-- directions -->
+<section class="directions-container">
+    <H3>Directions</H3>
+    <ol>
+        <li>Select the number of steps you'd like to ask Mother if you can move</li>
+        <li>Click the ask button to see if you are allowed</li>
+        <li>Click next round and repeat until one of the players has won</li>
+    </ol>
+</section>
     <script src="script.js"></script>
 </body>
 </html>

@@ -4,13 +4,13 @@ const p1askButton = document.getElementById('p1-ask-button');
 const p1askDisplay = document.getElementById('p1-ask-value');
 const p1answerDisplay = document.getElementById('p1-m-answer');
 
-const p1roundNumberDisplay = document.getElementById('p1-round-number');
-const p1nextRoundButton = document.getElementById('p1-next-round-button');
+const roundNumberDisplay = document.getElementById('round-number');
+const nextRoundButton = document.getElementById('next-round-button');
 
 
 let p1totalScore = 0;
 let p1currentRound = 1;
-let win = 15;
+const win = 15;
 
 let p2totalScore = 0;
 let p2currentRound = 1;
@@ -33,33 +33,58 @@ p1askButton.addEventListener('click', () => {
     p1scoreDisplay.innerText = p1totalScore;
     // disable button
     p1askButton.setAttribute('disabled', true)
-
-    if (p1totalScore >= win || p2totalScore >= win) {
-        gameOver();
+    
+    // display winner message depending on who wins
+    if (p1totalScore >= win) { 
+        P1gameOver();
+    } else if(p2totalScore >= win) {
+        P2gameOver();
     }
 });
 
 
-p1nextRoundButton.addEventListener('click', ()=> {
+nextRoundButton.addEventListener('click', ()=> {
     // increase round and display new round number
     p1currentRound++;
-    p1roundNumberDisplay.innerText = p1currentRound;
+    roundNumberDisplay.innerText = p1currentRound;
 
     p1askDisplay.innerText = '';
     p1answerDisplay.innerText = '';
     p1askButton.removeAttribute('disabled')
 
-    if (p1totalScore >= win|| p2totalScore >= win) { 
-        gameOver();
+  // display winner message depending on who wins
+    if (p1totalScore >= win) { 
+        P1gameOver();
+    } else if(p2totalScore >= win) {
+        P2gameOver();
     }
+
+    p2currentRound++;
+
+    p2askDisplay.innerText = '';
+    p2answerDisplay.innerText = '';
+    p2askButton.removeAttribute('disabled')
 });
 
-function gameOver() {
-    p1answerDisplay.innerText = 'Game Over'
-    p1nextRoundButton.setAttribute('disabled', true)
-    p2answerDisplay.innerText = 'Game Over'
-    p2nextRoundButton.setAttribute('disabled', true)
+// if Player 1 wins
+function P1gameOver() {
+    p1answerDisplay.innerText = 'Game Over! Player 1 Wins!'
+    nextRoundButton.setAttribute('disabled', true)
+    p2answerDisplay.innerText = 'Sorry, you lose!'
+    p1askButton.setAttribute('disabled', true)
+    p2askButton.setAttribute('disabled', true)
 }
+
+// if player 2 wins
+function P2gameOver() {
+    p2answerDisplay.innerText = 'Game Over! Player 2 Wins!'
+    nextRoundButton.setAttribute('disabled', true)
+    p1answerDisplay.innerText = 'Sorry, you lose!'
+    p1askButton.setAttribute('disabled', true)
+    p2askButton.setAttribute('disabled', true)
+}
+
+
 
 
 const p2ask = document.getElementById('p2-ask');
@@ -68,18 +93,11 @@ const p2askButton = document.getElementById('p2-ask-button');
 const p2askDisplay = document.getElementById('p2-ask-value');
 const p2answerDisplay = document.getElementById('p2-m-answer');
 
-const p2roundNumberDisplay = document.getElementById('p2-round-number');
-const p2nextRoundButton = document.getElementById('p2-next-round-button');
-
-
-
 
 p2askButton.addEventListener('click', () => {
     let p2askValue = +p2ask.value;
 
-
-
-    // make mom decide yes or no and get response
+    // make mom decide yes or no and get response for player 2
     let p2getAnswer = Math.floor(Math.random()*500);
     
     if (p2getAnswer > 150){
@@ -93,23 +111,10 @@ p2askButton.addEventListener('click', () => {
 
     p2askButton.setAttribute('disabled', true)
 
-    if (p2totalScore >= win || p1totalScore >= win) {
-        gameOver();
-    }
-});
-
-
-p2nextRoundButton.addEventListener('click', ()=> {
-    // increase round and display new round number
-    p2currentRound++;
-    p2roundNumberDisplay.innerText = p2currentRound;
-
-    p2askDisplay.innerText = '';
-    p2answerDisplay.innerText = '';
-    p2askButton.removeAttribute('disabled')
-
-    if (p2totalScore >= win|| p1totalScore >= win) { 
-        gameOver();
+    if (p1totalScore >= win) { 
+        P1gameOver();
+    } else if(p2totalScore >= win) {
+        P2gameOver();
     }
 });
 
